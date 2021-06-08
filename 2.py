@@ -51,7 +51,6 @@ def pic_select_b():
     global photo_b,path_b
     path_b=Pic2.selectPicture()    
     image_b=Image.open(path_b)
-    r_b=cv.imread(path_b)
     photo_b = ImageTk.PhotoImage(image_b)
     l_2=tk.Label(win, image=photo_b)
     l_2.grid(row=2,column=2)
@@ -59,7 +58,7 @@ botton2=tk.Button(win,text='选择图片b',width=10,height=2,command=pic_select_
 botton2.grid(row=1,column=2)
 #建立选择图片b按钮及其功能
 def pic_add():
-    global photo_add,r_a
+    global photo_add
     r_a=cv.imread(path_a)
     r_b=cv.imread(path_b)
     image_add_re=Image.open(Pic.add_together(r_a,r_b))
